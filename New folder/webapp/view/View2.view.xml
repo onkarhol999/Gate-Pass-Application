@@ -1,0 +1,70 @@
+<mvc:View
+    controllerName="getpassappv1.getpassappv1.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+
+    <m:Page
+        id="pageGetPassDetails"
+        title="Get Pass Details"            
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+
+        <m:content>
+
+            <m:VBox id="vboxPassContainer" class="passContainer"> 
+
+                <!-- Title -->
+                <m:Title id="titlePass" class="passTitle" text="Pass"/>
+
+                <!-- Pass Details -->
+                <m:HBox id="hboxSrNo" class="passDetail">
+                    <!-- <m:Label id="lblSrNo" class="label" text="Pass No:"/> -->
+                    <m:Text id="txtSrNo" class="value" text="{viewModel>/SrNo}"/>
+                </m:HBox>
+
+                <!-- <m:HBox id="hboxName" class="passDetail">
+                    <m:Label id="lblName1" class="label" text="Name:"/>
+                    <m:Text id="txtName" class="value" text="{viewModel>/Name}"/>
+                </m:HBox> -->
+<!-- 
+                <m:HBox id="hboxVehicle" class="passDetail">
+                    <m:Label id="lblVehicle1" class="label" text="Vehicle No:"/>
+                    <m:Text id="txtVehicle" class="value" text="{viewModel>/VehicleNo}"/>
+                </m:HBox>
+
+                <m:HBox id="hboxDivision" class="passDetail">
+                    <m:Label id="lblDivision1" class="label" text="Division:"/>
+                    <m:Text id="txtDivision" class="value" text="{viewModel>/Division}"/>
+                </m:HBox> -->
+
+                <!-- QR Code -->
+                <m:VBox id="vboxQRContainer" class="qrContainer" alignItems="Center">
+                    <!-- <m:Title id="titleQR" text="Scan QR" level="H3"/> -->
+                    <core:HTML id="htmlQR"/>
+                </m:VBox>
+
+
+                
+
+            </m:VBox>
+            <m:HBox
+                id="hboxDownload"
+                justifyContent="Center"
+                alignItems="Center">
+
+                <m:Button
+                    id="btnDownloadPdf"
+                    text="Download PDF"
+                    icon="sap-icon://download"
+                    type="Emphasized"
+                    press=".onDownloadPdf"/>
+            </m:HBox>
+
+     
+        </m:content>
+
+    </m:Page>
+
+</mvc:View>

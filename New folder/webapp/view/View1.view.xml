@@ -1,0 +1,91 @@
+<mvc:View
+    controllerName="getpassappv1.getpassappv1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:form="sap.ui.layout.form">
+
+    <m:Page
+        id="pageGetPassMain"
+        title="{i18n>title}">
+
+        <m:content>
+
+            <!-- Page Center Wrapper -->
+            <m:VBox
+                id="vboxPageWrapperGP"
+                class="pageCenter"
+                alignItems="Center"
+                justifyContent="Center">
+
+                <!-- Centered Page Text -->
+                <m:Text
+                    id="txtPageGetPassGP"
+                    text="Gate Pass"
+                    class="pageTitle"/>
+
+                <!-- Sma ller Bordered Box -->
+                <m:VBox
+                    id="vboxFormContainerGP"
+                    class="getPassBox"
+                    alignItems="Stretch">
+
+                    <form:SimpleForm
+                        id="formGetPassEntryGP"
+                        editable="true"
+                        layout="ResponsiveGridLayout"
+                        labelSpanXL="4"
+                        labelSpanL="4"
+                        labelSpanM="4"
+                        labelSpanS="12"
+                        columnsXL="1"
+                        columnsL="1"
+                        columnsM="1">
+
+                        <m:Label id="lblGPInTime" text="In Time"/>
+                        <m:TimePicker
+                            id="tpGPInTime"
+                            valueFormat="HH:mm:ss"
+                            displayFormat="HH:mm:ss"
+                            width="100%"/>
+
+                        <m:Label id="lblGPInDate" text="In Date"/>
+                        <m:DatePicker
+                            id="dpGPInDate"
+                            valueFormat="dd/MM/yyyy"
+                            displayFormat="dd/MM/yyyy"
+                            width="100%"/>
+
+                        <m:Label id="lblGPName" text="Name"/>
+                        <m:Input id="inpGPName"/>
+
+                        <m:Label id="lblGPMobile" text="Mobile No"/>
+                        <m:Input id="inpGPMobile"/>
+
+                        <m:Label id="lblGPVehicle" text="Vehicle No"/>
+                        <m:Input id="inpGPVehicle"/>
+
+                        <m:Label id="lblGPDivision" text="Division"/>
+                        <m:Input id="inpGPDivision"/>
+
+                    </form:SimpleForm>
+
+                    <!-- Button -->
+                    <m:VBox
+                        id="vboxBtnWrapperGP"
+                        class="btnCenter">
+                        <m:Button
+                            id="btnSubmitGetPassGP"
+                            text="Get Pass"
+                            type="Emphasized"
+                            press=".onSave"
+                            width="120px"/>
+                    </m:VBox>
+
+                </m:VBox>
+
+            </m:VBox>
+
+        </m:content>
+
+    </m:Page>
+</mvc:View>

@@ -1,0 +1,142 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "getpassappv1.getpassappv1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.0",
+      "toolsId": "f7095ba7-7c09-4e11-90d1-4f191ff1ea9a"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/Z_GET_PASS_ODATA_SRV_01/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "Object-display": {
+          "semanticObject": "Object",
+          "action": "display",
+          "title": "{{Object-display.flpTitle}}",
+          "subTitle": "{{Object-display.flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://kpi-managing-my-area",
+      "favIcon": "sap-icon://kpi-managing-my-area",
+      "phone": "sap-icon://kpi-managing-my-area",
+      "phone@2": "sap-icon://kpi-managing-my-area",
+      "tablet": "sap-icon://kpi-managing-my-area",
+      "tablet@2": "sap-icon://kpi-managing-my-area"
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.143.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "getpassappv1.getpassappv1.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "getpassappv1.getpassappv1.view",
+        "async": true,
+        "viewPath": "getpassappv1.getpassappv1.view"
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": "",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+          "name": "View2",
+          "pattern": "getpass/{SrNo}",
+          "target": "View2"
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "id": "View1",
+          "name": "View1"
+        },
+        "View2": {
+          "viewName": "View2",
+          "viewLevel": 2
+        }
+
+      }
+    },
+    "rootView": {
+      "viewName": "getpassappv1.getpassappv1.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "getpassappv1getpassappv1"
+  }
+}
